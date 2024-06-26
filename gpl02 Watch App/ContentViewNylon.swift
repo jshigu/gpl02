@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentViewNylon: View {
-  @State private var selectionValue = 1
 
     var body: some View {
-      Text("号数　ポンド　kg 太さ")
+      Text("号数　pound　kg φ")
       VStack {
         List {
           Text("0.25号  1.0 lb\n0.45kg 0.083mm")
@@ -37,13 +36,11 @@ struct ContentViewNylon: View {
           Text("7.0 号   25 lb\n11.3kg 0.435mm")
           Text("8.0 号   28 lb\n12.7kg 0.470mm")
           Text("10  号   35 lb\n15.9kg 0.520mm")
-
-
-        }
-
           
         }
-        .padding()
+      }
+      .padding()
+      .background(Color(red: 0.1, green: 0.15, blue: 0.0))
 
     }
 }
