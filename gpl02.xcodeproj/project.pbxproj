@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90CD5B732C26704000B0BD94 /* ContentViewTide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD5B722C26704000B0BD94 /* ContentViewTide.swift */; };
+		90CE61A52C48B21600DD798E /* ContentViewCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE61A42C48B21600DD798E /* ContentViewCheck.swift */; };
 		90D19EB02BB15C92008738FA /* gpl02 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 90D19EAF2BB15C92008738FA /* gpl02 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		90D19EB52BB15C92008738FA /* gpl02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D19EB42BB15C92008738FA /* gpl02App.swift */; };
 		90D19EB72BB15C92008738FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D19EB62BB15C92008738FA /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		90CD5B722C26704000B0BD94 /* ContentViewTide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTide.swift; sourceTree = "<group>"; };
+		90CE61A42C48B21600DD798E /* ContentViewCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewCheck.swift; sourceTree = "<group>"; };
 		90D19EA92BB15C92008738FA /* gpl02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpl02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D19EAF2BB15C92008738FA /* gpl02 Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gpl02 Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D19EB42BB15C92008738FA /* gpl02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpl02App.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				90D19ECC2BB1DE09008738FA /* ContentViewNylon.swift */,
 				90D19ED02BB1DE32008738FA /* ContentViewPE.swift */,
 				90D19ED22BB1DFD5008738FA /* ContentViewOmori.swift */,
+				90CE61A42C48B21600DD798E /* ContentViewCheck.swift */,
 				90CD5B722C26704000B0BD94 /* ContentViewTide.swift */,
 				90D19EB62BB15C92008738FA /* ContentView.swift */,
 				90D19EB82BB15CBF008738FA /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 				90D19EB52BB15C92008738FA /* gpl02App.swift in Sources */,
 				90CD5B732C26704000B0BD94 /* ContentViewTide.swift in Sources */,
 				90D19ED12BB1DE32008738FA /* ContentViewPE.swift in Sources */,
+				90CE61A52C48B21600DD798E /* ContentViewCheck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
