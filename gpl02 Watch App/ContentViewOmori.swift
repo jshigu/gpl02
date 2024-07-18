@@ -61,6 +61,8 @@ struct ContentViewOmori: View {
           Text("80号 300g  10 oz")
           Text("100号 375g  12 oz")
         }
+        .environment(\.defaultMinListRowHeight, 16 )
+
         
       }
       .padding()

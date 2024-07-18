@@ -9,27 +9,11 @@
 import SwiftUI
 import UIKit
 
-
-
-struct gridLine: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint ( x: 10 , y: 10 ) )
-        path.addLine(to: CGPoint ( x: 50 , y: 50 ) )
-        return path
-    }
-}
-
-#Preview {
-    gridLine()
-}
-
-
 struct ContentViewTide: View {
     let dr = 0.0174532925199433   /*   degree to  radian */
     let rd = 57.29577951308232    /*   radian to degree  */
 
-    @State private var tideWiewFlag: Int = 0       //0:Tide　　    1:List
+//    @State private var tideWiewFlag: Int = 0       //0:Tide　　    1:List
     
     //LatLon Set
     @State private var tideSelectionValue = 3
@@ -67,9 +51,8 @@ struct ContentViewTide: View {
     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
     ]
 
-    
     //Data
-    @State private var selectionOffset = 2
+    @State private var selectionOffset = 1
  
     
     var body: some View {
@@ -79,14 +62,24 @@ struct ContentViewTide: View {
             //西暦
             let calendar = Calendar(identifier: .gregorian)
             let date = Date()
-            let modifiedDate = Calendar.current.date(byAdding: .day, value: selectionOffset - 2, to: date)!
+            let modifiedDate = Calendar.current.date(byAdding: .day, value: selectionOffset - 1, to: date)!
             
             let month : Int = Int(calendar.component(.month, from: modifiedDate))
             let day: Int = Int( calendar.component(.day, from: modifiedDate) )
             let year : Int = Int(calendar.component(.year, from: modifiedDate))
-            
-            Text("\(year%100)年\(month)月\(day)日").font(.system(size: 18))
-                .offset(x: 0, y: -30 )
+            let miut : Int = Int(calendar.component(.minute, from: date))
+            let hour : Int = Int(calendar.component(.hour, from: date))
+//            let seco : Int = Int(calendar.component(.second, from: date))
+//            let angles = getAnglesLess(date: modifiedDate)
+
+            if selectionOffset == 0 {
+                Text("\(year%100)/\(month)/\(day+1)").font(.system(size: 18))
+                    .offset(x: 0, y: -55 )
+            }else{
+                Text("\(year%100)/\(month)/\(day)").font(.system(size: 18))
+                    .offset(x: 0, y: -55 )
+            }
+
             HStack{
                 Picker("場所", selection: $tideSelectionValue ) {
                     /// 選択項目の一覧
@@ -102,38 +95,154 @@ struct ContentViewTide: View {
 
                 Picker("日付差", selection: $selectionOffset ) {
                     /// 選択項目の一覧
-                    Text("-2").tag(0)
-                    Text("-1").tag(1)
-                    Text(" 0").tag(2)
-                    Text(" 1").tag(3)
-                    Text(" 2").tag(4)
-                    Text(" 3").tag(5)
-                    Text(" 4").tag(6)
-                    Text(" 5").tag(7)
-                    Text(" 6").tag(8)
-                    Text(" 7").tag(9)
+                    Text("--").tag(0)
+                    Text(" 0").tag(1)
+                    Text(" 1").tag(2)
+                    Text(" 2").tag(3)
+                    Text(" 3").tag(4)
+                    Text(" 4").tag(5)
+                    Text(" 5").tag(6)
+                    Text(" 6").tag(7)
+                    Text(" 7").tag(8)
+                    Text(" 8").tag(9)
+                    Text(" 9").tag(10)
+                    Text("10").tag(11)
+                    Text("11").tag(12)
+                    Text("12").tag(13)
+                    Text("13").tag(14)
+                    Text("14").tag(15)
                 }
                 .pickerStyle(.wheel)
                 .frame(maxWidth: 37  , alignment: .leading)
 
             }
-            .offset(x: 0, y: -40 )
-            .frame(maxHeight: 37 , alignment: .leading)
+            .offset(x: 0, y: -60 )
+            .frame(maxHeight: 36 , alignment: .leading)
             
-            let returnTideLintPoint = tideLineSet( year:year, month:month, day: day)
-            
-            ZStack {
-                ForEach(0..<73) { num in
-                    tideLine( num:num , tid:returnTideLintPoint )
-                }
-                gridLine()
+            if selectionOffset == 0 {
+                Text("")
+                    .font(.system(size: 24))
             }
-            .offset(x: -5, y: -35 )
+
+                        
+            ZStack {
+                if selectionOffset != 0 {
+                    let returnTideLintPoint = tideLineSet( year:year, month:month, day: day)
+
+                    ForEach(0..<73) { num in
+                        tideLine( num:num , tid:returnTideLintPoint )
+                    }
+                    gridTimeLine( hour:hour, miut:miut )
+                    gridLine()
+                }
+                else if selectionOffset == 0 {
+                    let returnTideLintPoint = tideLineSet( year:year, month:month, day: day + 2)
+                    
+                    let angles = getAnglesLess(hour:hour, miut:miut )
+                    ShortHand(angle: angles.short)
+                    //文字盤　24時計
+                    ForEach(0..<73) { i in
+                        if i == 0 {
+                            ys_mojiban( angle: .degrees( Double(i) * 15.0 ), jikan: "24" )
+                        }else{
+                            if i%6 == 0 {
+                                ys_mojiban( angle: .degrees( Double(i) * 5.0 ), jikan: "\(i/3)" )
+                            }else if i%6 == 0 {
+                                ys_mojiban( angle: .degrees( Double(i) * 5.0 ), jikan: "" )
+                            }
+                        }
+                        ys_tideban( cu:i, angle: .degrees( Double(i) * 5.0 ), jikan: "", tid:returnTideLintPoint )
+                    }
+                }
+            }
+            .offset(x: -5, y: -30 )
+//            .offset(x: -5, y: -15 )
         }
         .padding()
         .background(Color(red: 0.1, green: 0.15, blue: 0.0))
         
     }
+    
+    func getAnglesLess(hour:Int, miut:Int ) -> (long: Angle, short: Angle, second: Angle) {
+        let totalSeconds = Double(miut) * 60.0
+        let secondDegree = 0.0
+        
+        let longDegree = Double(totalSeconds) / 3600 * 360
+        let hourDegree = Double(hour % 24) / 24 * 360
+        let secondsDegree = longDegree / 24
+        let shortDegree = hourDegree + secondsDegree
+        return (long: Angle(degrees: longDegree), short: Angle(degrees: shortDegree), second: Angle(degrees: secondDegree))
+    }
+
+    
+    func ShortHand(angle: Angle) -> some View {
+        HandTriangle(width: 5, height: 60)
+        //            .stroke(lineWidth: 2)
+            .fill(.white)
+            .frame(width: 12, height: 40)
+            .offset(x: 6, y: 20)
+            .rotationEffect(angle)
+    }
+
+    func HandTriangle(width: CGFloat, height: CGFloat) -> some Shape {
+        Path { path in
+            path.move(to: CGPointZero)
+            path.addLine(to: CGPoint(x: -width/2, y: 0))
+            path.addLine(to: CGPoint(x: -2, y: -height))
+            path.addLine(to: CGPoint(x: 2, y: -height))
+            path.addLine(to: CGPoint(x: width/2, y: 0))
+            path.closeSubpath()
+        }
+    }
+
+    
+    func ys_tideban( cu:Int, angle: Angle, jikan : String , tid:[Double] ) -> some View{
+        ys_tide_sen(width: 4, height: 50 - tid[cu * 2 + 1] / 1  )
+            .fill(Color(red: 0.3, green: 0.95, blue: 0.95))
+            .frame(width: 24, height: 40)
+            .offset(x: 6, y: 0)
+            .rotationEffect(angle + .degrees(6))
+        
+        ////
+    }
+    func ys_tide_sen(width: CGFloat, height: CGFloat) -> some Shape {
+        Path { path in
+            path.move(to: CGPoint(x: width*0.4, y: -height*0.94))
+            path.addLine(to: CGPoint(x: -width*0.4, y: -height*0.94))
+            path.addLine(to: CGPoint(x: -width*0.4, y: -height))
+            path.addLine(to: CGPoint(x:  width*0.4, y: -height))
+            path.closeSubpath()
+        }
+    }
+
+    func ys_mojiban(angle: Angle, jikan : String ) -> some View{
+        ys_mojiban_sen(width: 4, height: 55)
+            .fill(Color(red: 0.2, green: 0.3, blue: 0.9))
+            .frame(width: 24, height: 40)
+            .offset(x: 6, y: 10)
+            .overlay(
+                Text(jikan)
+                    .rotationEffect(  .degrees(0) - angle - .degrees(6) )
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
+                ////
+                    .offset(x: -8, y: -55)
+            )
+        //課題：どうして６度傾けるか
+            .rotationEffect(angle + .degrees(6))
+    }
+
+    func ys_mojiban_sen(width: CGFloat, height: CGFloat) -> some Shape {
+        Path { path in
+            path.move(to: CGPoint(x: 0, y: -height*0.9))
+            path.addLine(to: CGPoint(x: -width*0.5, y: -height*0.9))
+            path.addLine(to: CGPoint(x: -width*0.5, y: -height))
+            path.addLine(to: CGPoint(x:  width*0.5, y: -height))
+            path.addLine(to: CGPoint(x:  width*0.5, y: -height*0.9))
+            path.closeSubpath()
+        }
+    }
+
     
     func tideLine( num:Int, tid:[Double] ) -> some View {
         tideLine2(width: 140, height: 100, x1:tid[num * 2] , y1:tid[num * 2 + 1], x2:tid[num * 2 + 2], y2:tid[num * 2 + 3] )
@@ -158,6 +267,24 @@ struct ContentViewTide: View {
         //            .frame(width: 12, height: 40)0
             .offset(x: 10, y: -5)
     }
+    
+    func gridTimeLine(hour:Int, miut:Int) -> some View {
+        gridTimeLine2(width: 140, height: 100, hour:CGFloat(hour), miut:CGFloat(miut))
+            .fill(Color(red: 0.95, green: 0.4, blue: 0.0))
+            .offset(x: 10, y: -5)
+    }
+    func gridTimeLine2(width: CGFloat, height: CGFloat, hour:CGFloat , miut:CGFloat ) -> some Shape {
+        Path { path in
+            
+            let i = width / (24 * 60) * (hour * 60 + miut )
+            path.move(to: CGPoint(x: i, y: 0))
+            path.addLine(to: CGPoint(x:i , y: height))
+            path.addLine(to: CGPoint(x: i + 1.5 , y: height))
+            path.addLine(to: CGPoint(x: i + 1.5 , y: 0))
+            path.closeSubpath()
+        }
+    }
+
     
     func gridLine2(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
@@ -217,9 +344,9 @@ struct ContentViewTide: View {
     }
     
     func tideLineSet(year:Int, month:Int, day:Int ) -> [Double] {
-        let z =  serial_z(yr: year, mh:month, dy:24 )     /* 天文計算用通日 */
-        let arg1 = z + 6.5;
-        let arg2 = floor(arg1/7.0);
+//        let z =  serial_z(yr: year, mh:month, dy:24 )     /* 天文計算用通日 */
+//        let arg1 = z + 6.5;
+//        let arg2 = floor(arg1 / 7.0);
 //        let wday = (Int)(arg1 - arg2*7.0);
         let l = (Int)((year+3)/4)-500;
         let tz = serial_day(month:month, day:day) + l   /* 潮汐計算用通日 */
@@ -236,6 +363,7 @@ struct ContentViewTide: View {
         var vl = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ,9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0 ,19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0 ,29.0, 30.0, 31.0, 32.0, 33.0, 34.0, 35.0, 36.0, 37.0, 38.0 ,39.0]
         /*  基本となる分潮の天文因数 及び天文引数  */
         var re00 = argument_f0( p:re.p, n:re.n, ff: &f0)
+        if re00 == 0 {}
         re00 = argument_u0( p:re.p, n:re.n, ff: &u0)
         re00 = argument_v1( s:re.s, h:re.h, p:re.p, ff: &v)
         re00 = argument_u1( u0: &u0, u: &u )
@@ -248,7 +376,7 @@ struct ContentViewTide: View {
         /*  分潮の角速度　*/
         re00 = angular_speed( ags: &ags )
         /*   天文引数 (V0+U)l  観測地の帯域時午前零時の値に変換  */
-        let latAy = na[tideSelectionValue][1] as! Double
+//        let latAy = na[tideSelectionValue][1] as! Double
         let lngAy = na[tideSelectionValue][2] as! Double
 
 //        let lat = dg2dc( latAy )
