@@ -1,1 +1,2 @@
-![スクリーンショット 2024-06-26 16 11 29](https://github.com/jshigu/gpl02/assets/81862360/8f8310f5-4f86-438c-934d-dcdce6cb99a7)
+
+![スクリーンショット 2024-07-18 10 57 42](https://github.com/user-attachments/assets/54330d9b-26d6-43b2-a529-2169d0c025f6)
