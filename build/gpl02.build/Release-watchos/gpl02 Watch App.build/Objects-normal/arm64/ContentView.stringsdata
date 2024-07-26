@@ -1,0 +1,52 @@
+{
+  "source": "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "いかなる損害に責任を負いません\n同意しますか？"
+      },
+      {
+        "comment": "",
+        "key": "ご利用にあたり"
+      },
+      {
+        "comment": "",
+        "key": "いいえ"
+      },
+      {
+        "comment": "",
+        "key": "はい"
+      },
+      {
+        "comment": "",
+        "key": "選択して下さい"
+      },
+      {
+        "comment": "",
+        "key": " 釣行に便利"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      },
+      {
+        "comment": "",
+        "key": "Tide 潮汐"
+      },
+      {
+        "comment": "",
+        "key": "ナイロン,フロロ\n変換表"
+      },
+      {
+        "comment": "",
+        "key": "オモリ変換表"
+      },
+      {
+        "comment": "",
+        "key": "PE　変換表"
+      }
+    ]
+  },
+  "version": 1
+}

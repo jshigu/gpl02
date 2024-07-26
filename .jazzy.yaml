@@ -1,0 +1,31 @@
+# .jazzy.yaml
+
+# ドキュメント化するスコープ
+min_acl: private
+
+# 出力先フォルダをクリーンするか否か
+clean: true
+
+# 出力先フォルダの指定
+output: docs
+
+# 作成者の名前
+author: Shigu
+
+# 作成者のURL
+author_url: https://github.com/jshigu/gpl02
+
+# ドキュメント化する対象モジュールの名称
+module: GPL02
+
+# ドキュメントコメントのないファイルはスキップするか否か
+skip_undocumented: true
+
+# ドキュメントにつけるバージョン番号
+module_version: 1.0
+
+# コピーライト
+copyright: © 2024 - Sihu440 -
+
+# ドキュメントのテーマ(apple/fullWidth/jonyの3つから選択可能)
+theme: apple

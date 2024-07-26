@@ -59,6 +59,7 @@ struct ContentViewCheck: View {
     
 }
 
+
 //チェックボックス図形
 struct CheckboxStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {

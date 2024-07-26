@@ -1,0 +1,50 @@
+{
+  "" : {
+    "const-values" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master.swiftconstvalues",
+    "dependencies" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master.d",
+    "diagnostics" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master.dia",
+    "emit-module-dependencies" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master-emit-module.dia",
+    "swift-dependencies" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02 Watch App-master.swiftdeps"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/GeneratedAssetSymbols.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/GeneratedAssetSymbols.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentView.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentView.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentView.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentView.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewCheck.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewCheck.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewCheck.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewCheck.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewNylon.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewNylon.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewNylon.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewNylon.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewOmori.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewOmori.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewOmori.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewOmori.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewPE.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewPE.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewPE.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewPE.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewTide.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewTide.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewTide.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/ContentViewTide.o"
+  },
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/gpl02App.swift" : {
+    "index-unit-output-path" : "/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02App.o",
+    "llvm-bc" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02App.bc",
+    "object" : "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/Objects-normal/arm64_32/gpl02App.o"
+  }
+}

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentViewPE: View {
     var body: some View {
-        Text("号数 kg pound φ")
+        Text("sym. kg, pound, φ")
             .font(.system(size: 16))
             .frame(width:160, height:16, alignment:.leading)
             .offset(x: 0, y: -10)

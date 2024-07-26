@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'gpl02' in project 'gpl02'
+➜ Explicit dependency on target 'gpl02 Watch App' in project 'gpl02'
+Target 'gpl02 Watch App' in project 'gpl02' (no dependencies)

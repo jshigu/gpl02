@@ -1,0 +1,20 @@
+{
+  "source": "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewCheck.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "No.  CK   Item"
+      },
+      {
+        "comment": "",
+        "key": "%@ "
+      },
+      {
+        "comment": "",
+        "key": "  %@"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentViewOmori: View {
 
     var body: some View {
-      Text("記号　g oz")
+      Text("sym.　g, oz")
       VStack {
         List {
           Text("8 G   0.07g  ")

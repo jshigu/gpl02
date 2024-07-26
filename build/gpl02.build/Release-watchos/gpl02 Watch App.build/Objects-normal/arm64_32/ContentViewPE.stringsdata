@@ -1,0 +1,92 @@
+{
+  "source": "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewPE.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "号数 kg pound φ"
+      },
+      {
+        "comment": "",
+        "key": "0.1号  1.814kg   4lb 0.054mm"
+      },
+      {
+        "comment": "",
+        "key": "0.15号 2.043kg 4.5lb 0.066mm"
+      },
+      {
+        "comment": "",
+        "key": "0.2号  2.270kg   5lb 0.076mm"
+      },
+      {
+        "comment": "",
+        "key": "0.3号  2.722kg   6lb 0.094mm"
+      },
+      {
+        "comment": "",
+        "key": "0.4号  3.629kg   8lb 0.108mm"
+      },
+      {
+        "comment": "",
+        "key": "0.5号  4.536kg 10lb 0.121mm"
+      },
+      {
+        "comment": "",
+        "key": "0.6号  5.443kg 12lb 0.132mm"
+      },
+      {
+        "comment": "",
+        "key": "0.8号  5.443kg 12lb 0.132mm"
+      },
+      {
+        "comment": "",
+        "key": "1号    9.07kg  20lb 0.171mm"
+      },
+      {
+        "comment": "",
+        "key": "1.2号 10.90kg  24lb 0.191mm"
+      },
+      {
+        "comment": "",
+        "key": "1.5号 13.62kg  30lb 0.209mm"
+      },
+      {
+        "comment": "",
+        "key": "1.7号 15.44kg  34lb 0.219mm"
+      },
+      {
+        "comment": "",
+        "key": "2号   18.16kg  40lb 0.242mm"
+      },
+      {
+        "comment": "",
+        "key": "2.5号 22.70kg  50lb 0.270mm"
+      },
+      {
+        "comment": "",
+        "key": "3号   24.97kg  55lb 0.296mm"
+      },
+      {
+        "comment": "",
+        "key": "4号   27.24kg  60lb 0.342mm"
+      },
+      {
+        "comment": "",
+        "key": "5号   36.32kg  80lb 0.382mm"
+      },
+      {
+        "comment": "",
+        "key": "6号   40.86kg  90lb 0.418mm"
+      },
+      {
+        "comment": "",
+        "key": "8号   45.40kg 100lb 0.483mm"
+      },
+      {
+        "comment": "",
+        "key": "10号  59.02kg 130lb 0.540mm"
+      }
+    ]
+  },
+  "version": 1
+}

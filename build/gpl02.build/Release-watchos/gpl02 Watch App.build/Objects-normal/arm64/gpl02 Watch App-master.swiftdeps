@@ -1,0 +1,14 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "b643061efdb89723d78a33ee8561932c63bc70f0e9cd6a74b70bf0628b0d4564"
+build_start_time: [1721555433, 634629000]
+build_end_time: [1721555437, 343721000]
+inputs:
+  ? "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/build/gpl02.build/Release-watchos/gpl02 Watch App.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1721555433, 389490439]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentView.swift": [1721552351, 221969855]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewCheck.swift": [1721552351, 343319930]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewNylon.swift": [1721268684, 42695883]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewOmori.swift": [1721268684, 43159343]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewPE.swift": [1721268684, 43612177]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewTide.swift": [1721555312, 433763789]
+  "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/gpl02App.swift": [1721268684, 44545846]

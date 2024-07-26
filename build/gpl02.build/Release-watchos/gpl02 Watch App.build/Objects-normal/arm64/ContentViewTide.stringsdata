@@ -1,0 +1,116 @@
+{
+  "source": "/Users/shigu/Library/CloudStorage/Dropbox/2024/gpl02/gpl02 Watch App/ContentViewTide.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld/%lld/%lld"
+      },
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "場所"
+      },
+      {
+        "comment": "",
+        "key": "日付差"
+      },
+      {
+        "comment": "",
+        "key": "静岡/舞阪"
+      },
+      {
+        "comment": "",
+        "key": "愛知/師崎"
+      },
+      {
+        "comment": "",
+        "key": "愛知/武豊"
+      },
+      {
+        "comment": "",
+        "key": "三重/五ケ所"
+      },
+      {
+        "comment": "",
+        "key": "三重/鳥羽"
+      },
+      {
+        "comment": "",
+        "key": "三重/的矢"
+      },
+      {
+        "comment": "",
+        "key": "三重/尾鷲"
+      },
+      {
+        "comment": "",
+        "key": "--"
+      },
+      {
+        "comment": "",
+        "key": " 0"
+      },
+      {
+        "comment": "",
+        "key": " 1"
+      },
+      {
+        "comment": "",
+        "key": " 2"
+      },
+      {
+        "comment": "",
+        "key": " 3"
+      },
+      {
+        "comment": "",
+        "key": " 4"
+      },
+      {
+        "comment": "",
+        "key": " 5"
+      },
+      {
+        "comment": "",
+        "key": " 6"
+      },
+      {
+        "comment": "",
+        "key": " 7"
+      },
+      {
+        "comment": "",
+        "key": " 8"
+      },
+      {
+        "comment": "",
+        "key": " 9"
+      },
+      {
+        "comment": "",
+        "key": "10"
+      },
+      {
+        "comment": "",
+        "key": "11"
+      },
+      {
+        "comment": "",
+        "key": "12"
+      },
+      {
+        "comment": "",
+        "key": "13"
+      },
+      {
+        "comment": "",
+        "key": "14"
+      }
+    ]
+  },
+  "version": 1
+}

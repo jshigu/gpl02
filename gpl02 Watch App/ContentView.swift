@@ -10,12 +10,12 @@ import SwiftUI
 
 struct StructA {
     var selectionStateFlag = [false,false,false,false,false,false,false,false,false,false,false,false]
-    var selectionValueMono = ["竿", "タモ", "糸,オモリ", "救命胴衣", "浮き", "クーラ", "エサ", "雨具", "レジャマット", "JETBOIL", "扇風機"]
+    var selectionValueMono = ["fishing rod", "Net", "Line&Weight", "Life vest", "Float", "Cooler-box", "Bait", "Rain gear", "Picnic mat", "JETBOIL", "electric fan"]
 }
 
 struct ContentView: View {
     //「釣行チェック」ボタンの初期表示内容
-    @State var viewCheckDayTime: String = "  釣行チェック"
+    @State var viewCheckDayTime: String = "  Pre-Fishing CK"
     //スタート
     @State var isShowAlert = false
     @State var doui:Bool = false
@@ -29,25 +29,25 @@ struct ContentView: View {
             Button {
                 isShowAlert = true
             } label: {
-                Text("ご利用にあたり")
+                Text("Before useing")
             }
-            .alert( "いかなる損害に責任を負いません\n同意しますか？", isPresented: $isShowAlert ){
-                Button("いいえ"){
+            .alert( "We cannot be held responsible in any way.\nDo you agree?？", isPresented: $isShowAlert ){
+                Button("No."){
                     doui = false
                 }
-                Button("はい"){
+                Button("Yes."){
                     doui = true
                     fishingCheckListIni()
                 }
             }
         message: {
-            Text("選択して下さい")
+//            Text("Please choose")
         }
         }else {
             //            let _ = print("ys10 ",selectionStateFlag)
             VStack {
                 NavigationStack {
-                    Text(" 釣行に便利")
+                    Text(" convenient")
                     //                    .font(.system(size: 20))
                         .font(.system(size: 16))
                         .frame(width:160, height:16, alignment:.leading)
@@ -56,7 +56,7 @@ struct ContentView: View {
                         NavigationLink {
                             ContentViewTide()
                         } label: {
-                            Text("Tide 潮汐")
+                            Text("Tide")
                                 .padding()
                         }
                         
@@ -69,21 +69,21 @@ struct ContentView: View {
                         NavigationLink {
                             ContentViewNylon()
                         } label: {
-                            Text("ナイロン,フロロ\n変換表")
+                            Text("Fluorocarbon and Nylon Line")
                                 .padding()
                         }
                         
                         NavigationLink {
                             ContentViewOmori()
                         } label: {
-                            Text("オモリ変換表")
+                            Text("Weight table")
                                 .padding()
                         }
                         
                         NavigationLink {
                             ContentViewPE()
                         } label: {
-                            Text("PE　変換表")
+                            Text("Polyethylene Line")
                                 .padding()
                         }
                     }
@@ -100,7 +100,11 @@ struct ContentView: View {
         }
     }
     
-    //チェック記録をFishingCheckFlgからとり出す
+    /**
+     チェック記録をFishingCheckFlgからとり出す
+      - Parameters:なし
+      - Returns: なし
+    */
     public func fishingCheckListIni()  {
         //UserDefaults.standardに設定されているか確認
         if UserDefaults.standard.object(forKey: "FishingCheckFlg") == nil {
@@ -128,7 +132,7 @@ struct ContentView: View {
         let year : Int = Int(calendar.component(.year, from: date))
         let miut : Int = Int(calendar.component(.minute, from: date))
         let hour : Int = Int(calendar.component(.hour, from: date))
-        return String(format: "  釣行チェック\n  %02d/%02d/%02d %02d:%02d", year%100, month, day, hour, miut)
+        return String(format: "  Pre-Fishing CK\n  %02d/%02d/%02d %02d:%02d", year%100, month, day, hour, miut)
     }
     
     

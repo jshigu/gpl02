@@ -10,6 +10,7 @@ import SwiftUI
 import UIKit
 
 struct ContentViewTide: View {
+    
     let dr = 0.0174532925199433   /*   degree to  radian */
     let rd = 57.29577951308232    /*   radian to degree  */
 
@@ -27,14 +28,19 @@ struct ContentViewTide: View {
               ["三重/尾鷲", 34.04, 136.13, 104]
     ]
     let hr  = [
-        //"静岡/舞阪"
+        //静岡/舞阪
         [12.60,1.80,1.10,2.10,0.90,2.30,0.40,11.40,0.20,0.40,0.40,5.00,0.30,15.70,0.60,0.20,0.70,0.50,0.40,0.70,0.30,5.10,0.90,0.20,29.70,0.40,1.00,1.00,13.10,0.40,3.70,0.30,0.40,0.30,0.60,0.30,0.70,0.70,0.20,0.30],
-        //"愛知/師崎"
+        //愛知/師崎
         [16.50,0.90,1.10,1.30,1.10,3.80,0.80,17.70,0.40,0.80,0.40,7.70,0.50,23.70,0.30,0.40,1.30,0.40,0.80,1.50,1.90,10.30,1.60,0.50,57.40,0.50,2.00,1.80,26.70,0.10,7.60,0.30,0.40,1.20,0.50,0.40,0.20,0.20,0.20,0.20],
+        //愛知/武豊
         [15.50,0.40,0.40,1.60,0.40,3.40,0.60,18.00,0.40,1.20,0.50,7.30,0.40,24.00,0.30,0.30,1.30,0.60,0.60,0.90,2.00,10.50,2.00,0.30,60.50,1.10,1.80,1.40,28.50,0.40,8.00,0.40,0.80,1.30,0.90,0.60,0.30,0.10,0.30,0.50],
+        //三重/五ケ所
         [13.00,0.00,0.00,0.00,0.00,0.00,0.00,17.00,0.00,0.00,0.00,6.70,0.00,20.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,45.00,0.00,0.00,0.00,21.00,0.00,5.70,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00],
+        //三重/鳥羽
         [13.10,1.80,1.40,1.20,0.70,3.50,0.70,17.40,0.40,1.00,0.50,7.50,0.60,23.30,0.20,0.30,1.40,0.30,0.80,1.20,1.70,9.30,1.90,0.20,55.50,0.60,1.80,1.70,25.50,0.30,7.20,0.20,0.70,0.90,0.60,0.50,0.20,0.20,0.10,0.10,],
+        //三重/的矢
         [13.00,0.00,0.00,0.00,0.00,0.00,0.00,17.00,0.00,0.00,0.00,7.30,0.00,22.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,44.00,0.00,0.00,0.00,20.00,0.00,5.40,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00],
+        //三重/尾鷲
         [12.20,1.70,0.70,0.40,0.50,3.50,0.70,17.00,0.20,0.50,0.40,7.10,0.50,22.20,0.30,0.30,1.20,0.20,0.70,1.10,1.10,7.80,1.50,0.10,44.10,0.40,1.40,1.30,19.80,0.10,5.50,0.10,0.00,0.50,0.10,0.20,0.10,0.10,0.00,0.00]
     ]
     let pl =  [
@@ -151,7 +157,7 @@ struct ContentViewTide: View {
                                 ys_mojiban( angle: .degrees( Double(i) * 5.0 ), jikan: "" )
                             }
                         }
-                        ys_tideban( cu:i, angle: .degrees( Double(i) * 5.0 ), jikan: "", tid:returnTideLintPoint )
+                        ys_tideban( cu:i, angle: .degrees( Double(i) * 5.0 ), tid:returnTideLintPoint )
                     }
                 }
             }
@@ -163,6 +169,16 @@ struct ContentViewTide: View {
         
     }
     
+    /**
+      時間から時計の針角度を返す
+      - Parameters:
+        - hour: 時間
+        - miut: 分
+      - Returns:
+        - long: 長針角度
+        - short: 短針角度
+        - second: 秒針角度　使ってない
+    */
     func getAnglesLess(hour:Int, miut:Int ) -> (long: Angle, short: Angle, second: Angle) {
         let totalSeconds = Double(miut) * 60.0
         let secondDegree = 0.0
@@ -174,7 +190,13 @@ struct ContentViewTide: View {
         return (long: Angle(degrees: longDegree), short: Angle(degrees: shortDegree), second: Angle(degrees: secondDegree))
     }
 
-    
+    /**
+      短針を表示
+      - Parameters:
+        - angle: 角度
+      - Returns:
+        - some: 針の図形
+    */
     func ShortHand(angle: Angle) -> some View {
         HandTriangle(width: 5, height: 60)
         //            .stroke(lineWidth: 2)
@@ -183,7 +205,6 @@ struct ContentViewTide: View {
             .offset(x: 6, y: 20)
             .rotationEffect(angle)
     }
-
     func HandTriangle(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
             path.move(to: CGPointZero)
@@ -196,14 +217,21 @@ struct ContentViewTide: View {
     }
 
     
-    func ys_tideban( cu:Int, angle: Angle, jikan : String , tid:[Double] ) -> some View{
-        ys_tide_sen(width: 4, height: 50 - tid[cu * 2 + 1] / 1  )
+    /**
+      24 時間計でTideを表示
+      - Parameters:
+        - cu: カウント　1...72
+        - angle: 角度　angle = 360 / 72 * cu
+        - tid: 潮位配列
+      - Returns:
+        - some: Tideポイントの図形
+    */
+    func ys_tideban( cu:Int, angle: Angle, tid:[Double] ) -> some View{
+        ys_tide_sen(width: 4, height: (70 - tid[cu * 2 + 1] ) / 1.2  )
             .fill(Color(red: 0.3, green: 0.95, blue: 0.95))
             .frame(width: 24, height: 40)
             .offset(x: 6, y: 0)
             .rotationEffect(angle + .degrees(6))
-        
-        ////
     }
     func ys_tide_sen(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
@@ -215,6 +243,15 @@ struct ContentViewTide: View {
         }
     }
 
+    /**
+      24時間計の表示
+      - Parameters:
+        - cu: カウント　1...72
+        - angle: 角度　angle = 360 / 72 * cu
+        - tid: 潮位配列
+      - Returns:
+        - some: 針の図形
+    */
     func ys_mojiban(angle: Angle, jikan : String ) -> some View{
         ys_mojiban_sen(width: 4, height: 55)
             .fill(Color(red: 0.2, green: 0.3, blue: 0.9))
@@ -231,7 +268,6 @@ struct ContentViewTide: View {
         //課題：どうして６度傾けるか
             .rotationEffect(angle + .degrees(6))
     }
-
     func ys_mojiban_sen(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
             path.move(to: CGPoint(x: 0, y: -height*0.9))
@@ -244,6 +280,14 @@ struct ContentViewTide: View {
     }
 
     
+    /**
+      Tideグラフを表示（24時間計ではない）
+      - Parameters:
+        - cu: カウント　1...72
+        - tid: 潮位配列
+      - Returns:
+        - some: Tideラインの図形
+    */
     func tideLine( num:Int, tid:[Double] ) -> some View {
         tideLine2(width: 140, height: 100, x1:tid[num * 2] , y1:tid[num * 2 + 1], x2:tid[num * 2 + 2], y2:tid[num * 2 + 3] )
 //            .fill(Color(red: 0.6, green: 0.2, blue: 0.2))
@@ -261,13 +305,14 @@ struct ContentViewTide: View {
     }
 
     
-    func gridLine() -> some View {
-        gridLine2(width: 140, height: 100)
-        //            .fill(Color(red: 0.6, green: 0.2, blue: 0.2))
-        //            .frame(width: 12, height: 40)0
-            .offset(x: 10, y: -5)
-    }
-    
+    /**
+      Tideグラフに時間線を表示（24時間計ではない）
+      - Parameters:
+        - hour: 時
+        - miut: 分
+      - Returns:
+        - some: オレンジ色の時間ラインの図形
+    */
     func gridTimeLine(hour:Int, miut:Int) -> some View {
         gridTimeLine2(width: 140, height: 100, hour:CGFloat(hour), miut:CGFloat(miut))
             .fill(Color(red: 0.95, green: 0.4, blue: 0.0))
@@ -286,6 +331,16 @@ struct ContentViewTide: View {
     }
 
     
+    /**
+      Tideグラフの枠線を表示（24時間計ではない）
+      - Parameters: なし
+      - Returns:
+        - some: 枠線の図形
+    */
+    func gridLine() -> some View {
+        gridLine2(width: 140, height: 100)
+            .offset(x: 10, y: -5)
+    }
     func gridLine2(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
             var i = width / 24 * 0
@@ -338,9 +393,7 @@ struct ContentViewTide: View {
             path.addLine(to: CGPoint(x: width , y: i + 1))
             path.addLine(to: CGPoint(x: 0 , y: i + 1))
             path.closeSubpath()
-            
         }
-        
     }
     
     func tideLineSet(year:Int, month:Int, day:Int ) -> [Double] {
