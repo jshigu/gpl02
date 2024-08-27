@@ -48,10 +48,10 @@ struct ContentView: View {
             VStack {
                 NavigationStack {
                     Text(" convenient")
-                    //                    .font(.system(size: 20))
                         .font(.system(size: 16))
                         .frame(width:160, height:16, alignment:.leading)
                         .offset(x: 0, y: -20)
+                    
                     Form {
                         NavigationLink {
                             ContentViewTide()
