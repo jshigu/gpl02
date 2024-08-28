@@ -23,7 +23,7 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
           ["静岡/舞阪", 34.41, 137.37,  70],
           ["愛知/師崎", 34.42, 136.59, 125],
           ["愛知/武豊", 34.51 ,136.56 ,132],
-          ["三重/五ケ所",34.19, 136.40, 103],
+          ["三重/五ケ所",34.35, 136.70, 103],
           ["三重/鳥羽", 34.29, 136.51, 120],
           ["三重/的矢", 34.22, 136.52, 110],
           ["三重/尾鷲", 34.04, 136.13, 104],
@@ -147,7 +147,7 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
                     Text("兵庫/神戸").tag(13)
                 }
                 .pickerStyle(.wheel)
-
+                
                 Picker("日付差", selection: $selectionOffset ) {
                     /// 選択項目の一覧
                     Text("--").tag(0)
@@ -169,7 +169,7 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
                 }
                 .pickerStyle(.wheel)
                 .frame(maxWidth: 37  , alignment: .leading)
-
+                
             }
             .offset(x: 0, y: -60 )
             .frame(maxHeight: 36 , alignment: .leading)
@@ -186,14 +186,21 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
                     let re = calcA(m: month , d1: day )
                     //昼間時間帯
                     gridBox( dosu01:re.0, dosu02:re.1 )
+                    let openTime = Int( re.0 )
+                    let openMinu = (Double(re.0) - Double(openTime)) * 60.0
+                    let closeTime = Int( re.1 )
+                    let closeMinu = (Double(re.1) - Double(closeTime)) * 60.0
+                    Text(" \(openTime):\(Int(openMinu))           \(closeTime):\(Int(closeMinu))")
+                        .offset(x: 0, y: -44 )
                     //基本枠
                     gridLine()
-
+                    //Tide値取得
                     let returnTideLintPoint = tideLineSet( year:year, month:month, day: day, fg24:false )
-
+                    //Tideグラフ作成
                     ForEach(0..<73) { num in
                         tideLine( num:num , tid:returnTideLintPoint )
                     }
+                    //現在時間表示
                     gridTimeLine( hour:hour, miut:miut )
                 }
                 else if selectionOffset == 0 {
@@ -291,11 +298,7 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
     }
     func ys_tide_sen(width: CGFloat, height: CGFloat) -> some Shape {
         Path { path in
-            path.move(to: CGPoint(x: width*0.4, y: -height*0.9))
-            path.addLine(to: CGPoint(x: -width*0.4, y: -height*0.9))
-            path.addLine(to: CGPoint(x: -width*0.4, y: -height))
-            path.addLine(to: CGPoint(x:  width*0.4, y: -height))
-            path.closeSubpath()
+            path.addEllipse(in: CGRect(x:width, y: -height, width: 2, height: 2))
         }
     }
 
@@ -345,17 +348,13 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
     */
     func tideLine( num:Int, tid:[Double] ) -> some View {
         tideLine2(width: 140, height: 100, x1:tid[num * 2] , y1:tid[num * 2 + 1], x2:tid[num * 2 + 2], y2:tid[num * 2 + 3] )
-//            .fill(Color(red: 0.6, green: 0.2, blue: 0.2))
+            .fill(Color(red: 0.3, green: 0.95, blue: 0.95))
             .offset(x: 10, y: -5)
     }
    
     func tideLine2(width: CGFloat, height: CGFloat, x1:Double, y1:Double, x2:Double, y2:Double ) -> some Shape {
         Path { path in
-            path.move(to: CGPoint(x: x1 , y: y1))
-            path.addLine(to: CGPoint(x: x1  + 1 , y: y1))
-            path.addLine(to: CGPoint(x: x1  + 1 , y: y1 + 1))
-            path.addLine(to: CGPoint(x: x1      , y: y1 + 1))
-            path.closeSubpath()
+            path.addEllipse(in: CGRect(x:x1, y: y1, width: 1.5, height: 1.5))
         }
     }
 
@@ -407,6 +406,7 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
             path.addLine(to: CGPoint(x: i, y: 0))
             path.closeSubpath()
         }
+        
     }
     
     /**
@@ -452,7 +452,6 @@ let na = [["静岡/清水", 35.01, 138.30,  95],
             path.addLine(to: CGPoint(x: i + 1 , y: height))
             path.addLine(to: CGPoint(x: i + 1 , y: 0))
             path.closeSubpath()
-            
             
             i = height * 0
             path.move(to: CGPoint(x: 0 , y: i))
